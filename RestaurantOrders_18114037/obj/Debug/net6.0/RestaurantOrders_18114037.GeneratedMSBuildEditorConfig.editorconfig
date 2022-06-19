@@ -1,0 +1,116 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RestaurantOrders_18114037
+build_property.RootNamespace = RestaurantOrders_18114037
+build_property.ProjectDir = C:\Users\vladi\source\repos\DEPLOYING-BEFORE-SENDING\RestaurantOrders_18114037\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\vladi\source\repos\DEPLOYING-BEFORE-SENDING\RestaurantOrders_18114037
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ClientForms/ClientStatistics.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50Rm9ybXNcQ2xpZW50U3RhdGlzdGljcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ClientForms/OrderSummary.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50Rm9ybXNcT3JkZXJTdW1tYXJ5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ClientForms/UserDataEditing.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50Rm9ybXNcVXNlckRhdGFFZGl0aW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ClientForms/UserInfo.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50Rm9ybXNcVXNlckluZm8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ClientTest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50VGVzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/AddPhoneOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXEFkZFBob25lT3JkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/EditFood.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXEVkaXRGb29kLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/ManageMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXE1hbmFnZU1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/RestaurantStatistics.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXFJlc3RhdXJhbnRTdGF0aXN0aWNzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/TableReservations/AddReservation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXFRhYmxlUmVzZXJ2YXRpb25zXEFkZFJlc2VydmF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/TableReservations/DisplayTables.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXFRhYmxlUmVzZXJ2YXRpb25zXERpc3BsYXlUYWJsZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/TableReservations/Modal/ModalDialog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXFRhYmxlUmVzZXJ2YXRpb25zXE1vZGFsXE1vZGFsRGlhbG9nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/ManagerForms/TableReservations/TableReservations.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFuYWdlckZvcm1zXFRhYmxlUmVzZXJ2YXRpb25zXFRhYmxlUmVzZXJ2YXRpb25zLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/UnregisteredForms/Contact.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5yZWdpc3RlcmVkRm9ybXNcQ29udGFjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/UnregisteredForms/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5yZWdpc3RlcmVkRm9ybXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/UnregisteredForms/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5yZWdpc3RlcmVkRm9ybXNcUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/vladi/source/repos/DEPLOYING-BEFORE-SENDING/RestaurantOrders_18114037/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

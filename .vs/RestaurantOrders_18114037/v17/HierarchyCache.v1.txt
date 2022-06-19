@@ -1,0 +1,364 @@
+﻿++Solution 'RestaurantOrders_18114037' ‎(4 of 4 projects)
+i:{00000000-0000-0000-0000-000000000000}:RestaurantOrders_18114037.sln
+++Tests
+i:{00000000-0000-0000-0000-000000000000}:Tests
+++Dependencies
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>570
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:>364
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:>365
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>777
+++Repositories
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\repositories\
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\
+++Services
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\services\
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\
+++Analyzers
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:analyzers
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:analyzers
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:analyzers
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:analyzers
+++Frameworks
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:frameworks
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:frameworks
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:frameworks
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:frameworks
+++Packages
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:packages
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:packages
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:packages
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:packages
+++Projects
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:projects
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:projects
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:projects
+++AccountRepositoryShould.cs
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\repositories\accountrepositoryshould.cs
+++OrderRepositoryShould.cs
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\repositories\orderrepositoryshould.cs
+++PizzaRepositoryShould.cs
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\repositories\pizzarepositoryshould.cs
+++TableRepositoryShould.cs
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\repositories\tablerepositoryshould.cs
+++AccountManagmentServiceShould.cs
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\services\accountmanagmentserviceshould.cs
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.4\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++System.Text.Json.SourceGeneration
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++xunit.analyzers
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\.nuget\packages\xunit.analyzers\0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll
+++Microsoft.NETCore.App
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\tests\microsoft.netcore.app
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\microsoft.netcore.app
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\microsoft.netcore.app
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\microsoft.netcore.app
+++coverlet.collector (3.1.0)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>811
+++FluentAssertions (6.6.0)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>805
+++Microsoft.EntityFrameworkCore.InMemory (6.0.4)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>808
+++Microsoft.NET.Test.Sdk (16.11.0)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>804
+++Moq (4.17.2)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>810
+++MSTest.TestAdapter (2.2.7)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>813
+++MSTest.TestFramework (2.2.7)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>801
+++Quartz (3.4.0)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>812
+++xunit (2.4.1)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>807
+++xunit.runner.visualstudio (2.4.5)
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:>809
+++DataBaseAccess
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\databaseaccess.csproj
+i:{00000000-0000-0000-0000-000000000000}:DataBaseAccess
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\databaseaccess.csproj
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\databaseaccess.csproj
+++Repository
+i:{7d6053a5-dac4-4af8-9a1f-65310f9a16cf}:c:\users\vladi\source\repos\deploying-before-sending\repository\repository.csproj
+i:{00000000-0000-0000-0000-000000000000}:Repository
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\repository\repository.csproj
+++Converters
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\converters\
+++Models
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\
+++DateOnlyConverter.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\converters\dateonlyconverter.cs
+++TimeOnlyConverter.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\converters\timeonlyconverter.cs
+++Account.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\account.cs
+++Client.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\client.cs
+++Dishes.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\dishes.cs
+++Food.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\food.cs
+++Manager.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\manager.cs
+++ManagerAssignment.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\managerassignment.cs
+++Order.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\order.cs
+++Reservation.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\reservation.cs
+++Restaurant.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\restaurant.cs
+++RestaurantDBContext.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\restaurantdbcontext.cs
+++Table.cs
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:c:\users\vladi\source\repos\deploying-before-sending\databaseaccess\models\table.cs
+++Microsoft.EntityFrameworkCore (6.0.3)
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:>786
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:>802
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>829
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.3)
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:>787
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:>803
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>830
+++Microsoft.EntityFrameworkCore.Tools (6.0.3)
+i:{d932be11-0104-4fca-8a1f-f1f1ea3dda1d}:>788
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:>806
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>832
+++AccountRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\accountrepository.cs
+++ClientRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\clientrepository.cs
+++DishesRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\dishesrepository.cs
+++FoodRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\foodrepository.cs
+++IRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\irepository.cs
+++ManagerAssignmentRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\managerassignmentrepository.cs
+++ManagerRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\managerrepository.cs
+++OrderRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\orderrepository.cs
+++ReservationRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\reservationrepository.cs
+++RestaurantRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\restaurantrepository.cs
+++TableRepository.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\repositories\tablerepository.cs
+++AccountManagmentService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\accountmanagmentservice.cs
+++AccountService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\accountservice.cs
+++ClientService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\clientservice.cs
+++DishesService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\dishesservice.cs
+++FoodService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\foodservice.cs
+++IService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\iservice.cs
+++ManagerAssignmentService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\managerassignmentservice.cs
+++ManagerService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\managerservice.cs
+++OrderManagmentService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\ordermanagmentservice.cs
+++OrderService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\orderservice.cs
+++ReservationService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\reservationservice.cs
+++RestaurantReportService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\restaurantreportservice.cs
+++RestaurantService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\restaurantservice.cs
+++TableService.cs
+i:{c3b95821-9216-42e3-bcdd-83e2fac2c8b8}:c:\users\vladi\source\repos\deploying-before-sending\repository\services\tableservice.cs
+++RestaurantOrders_18114037
+i:{00000000-0000-0000-0000-000000000000}:RestaurantOrders_18114037
+++Connected Services 
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>778
+++Properties
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\properties\
+++wwwroot
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\
+++Data
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\data\
+++Pages
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\
+++Shared
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\shared\
+++_Imports.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\_imports.razor
+++App.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\app.razor
+++appsettings.json
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\appsettings.json
+++Program.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\program.cs
+++Startup.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\startup.cs
+++No service dependencies discovered
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>779
+++launchSettings.json
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\properties\launchsettings.json
+++css
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\css\
+++favicon.ico
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\favicon.ico
+++for-menu-food.jpg
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\for-menu-food.jpg
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\for-menu-food.jpg
+++paper-food-box.jpeg
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\paper-food-box.jpeg
+++placeholder-small.png
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\placeholder-small.png
+++CustomAuthenticationStateProvider.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\data\customauthenticationstateprovider.cs
+++passwordController.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\data\passwordcontroller.cs
+++AccountFront.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\accountfront.cs
+++ClientFront.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\clientfront.cs
+++ClientFrontDataUpdate.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\clientfrontdataupdate.cs
+++FoodFront.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\foodfront.cs
+++OrderFront.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\orderfront.cs
+++ReservationFront.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\reservationfront.cs
+++User.cs
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\models\user.cs
+++ClientForms
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\clientforms\
+++ManagerForms
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\
+++UnregisteredForms
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\unregisteredforms\
+++_Host.cshtml
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\_host.cshtml
+++ClientTest.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\clienttest.razor
+++Error.cshtml
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\error.cshtml
+++Index.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\index.razor
+++LoginLayout.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\shared\loginlayout.razor
+++MainLayout.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\shared\mainlayout.razor
+++NavMenu.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\shared\navmenu.razor
+++SurveyPrompt.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\shared\surveyprompt.razor
+++appsettings.Development.json
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++Microsoft.AspNetCore.App
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\microsoft.aspnetcore.app
+++Blazored.SessionStorage (2.2.0)
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:>831
+++bootstrap
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\bootstrap\
+++open-iconic
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\
+++site.css
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\site.css
+++ClientStatistics.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\clientforms\clientstatistics.razor
+++OrderSummary.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\clientforms\ordersummary.razor
+++UserDataEditing.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\clientforms\userdataediting.razor
+++UserInfo.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\clientforms\userinfo.razor
+++TableReservations
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\tablereservations\
+++AddPhoneOrder.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\addphoneorder.razor
+++EditFood.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\editfood.razor
+++ManageMenu.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\managemenu.razor
+++RestaurantStatistics.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\restaurantstatistics.razor
+++Contact.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\unregisteredforms\contact.razor
+++Login.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\unregisteredforms\login.razor
+++Register.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\unregisteredforms\register.razor
+++bootstrap.min.css
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\bootstrap\bootstrap.min.css
+++font
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\
+++FONT-LICENSE
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font-license
+++ICON-LICENSE
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\icon-license
+++README.md
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\readme.md
+++Modal
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\tablereservations\modal\
+++AddReservation.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\tablereservations\addreservation.razor
+++DisplayTables.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\tablereservations\displaytables.razor
+++TableReservations.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\tablereservations\tablereservations.razor
+++bootstrap.min.css.map
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\bootstrap\bootstrap.min.css.map
+++fonts
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\fonts\
+++ModalDialog.razor
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\pages\managerforms\tablereservations\modal\modaldialog.razor
+++open-iconic-bootstrap.min.css
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css
+++open-iconic.eot
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\fonts\open-iconic.eot
+++open-iconic.otf
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\fonts\open-iconic.otf
+++open-iconic.svg
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\fonts\open-iconic.svg
+++open-iconic.ttf
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf
+++open-iconic.woff
+i:{3bcba1cf-fc3e-4d9a-95d1-63c81170ea42}:c:\users\vladi\source\repos\deploying-before-sending\restaurantorders_18114037\wwwroot\css\open-iconic\font\fonts\open-iconic.woff

@@ -1,0 +1,117 @@
+-- Create new admin
+INSERT INTO account (e_mail, login, password, name, surname, account_creation_date, phone_number, role)
+VALUES ('vladimiradmin@gmail.com','root','Password1@','Admin','admin', GETDATE(), '123654789', 'Admin');
+
+INSERT INTO client (points, address, account_id_account)
+VALUES (0,'Tsarigradsko Shose 15', (	SELECT account.id_account 
+					FROM account 
+					WHERE account.name = 'Admin'));
+
+-- Create new Client
+INSERT INTO account (e_mail, login, password, name, surname, account_creation_date, phone_number, role)
+VALUES ('ivanpetrov@gmail.com','ivanpetrov','Password1@','Ivan','Petrov', GETDATE(), '088555522', 'Client');
+
+INSERT INTO client (points,address,account_id_account)
+VALUES (0,'ul. Borovo 15', (	SELECT account.id_account 
+				FROM account 
+				WHERE account.name = 'Ivan'));
+
+-- Create new Manager
+INSERT INTO account (e_mail, login, password, name, surname, account_creation_date, phone_number, role)
+VALUES ('vladimir543@abv.bg','Vladimir','Password1@','Vladimir','Blaskov', GETDATE(), '+359884244373', 'Manager');
+
+INSERT INTO client (points, address, account_id_account)
+VALUES (0,'Amarantowa 1', (	SELECT account.id_account 
+				FROM account 
+				WHERE account.name = 'Vladimir'));
+
+INSERT INTO manager (salary_netto,salary_brutto,account_id_account)
+VALUES (4500, 5200, (SELECT account.id_account 
+			FROM account 
+			WHERE account.name = 'Vladimir'));
+
+-- Create new food type
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (16, 5, 1, 'Chicken and fries', 32, 0);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (18, 6, 1, 'Chicken and rice', 32, 0);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (15, 7, 1, 'Spaghetti', 32, 1);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (10, 8, 1, 'Pizza Margharita', 32, 2);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (12, 8, 1, 'Pizza Roma', 32, 2);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (17, 9, 1, 'Pizza Carpiciosa', 32, 2);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (8, 4, 1, 'Shopska salad', 32, 5);
+
+INSERT INTO food (price, cost, isAvailable, type, size, points)
+VALUES (8, 4, 1, 'Green salad', 32, 5);
+
+
+-- Create new restaurats
+INSERT INTO restaurant (address, phone_number, e_mail)
+VALUES ('Tsarigradsko Shose 15', '+3598482488', 'restaurant_18114037@gmail.com');
+
+INSERT INTO restaurant (address, phone_number, e_mail)
+VALUES ('Borovo ul. Ruen', '+3598848284', 'restaurant_18114037@gmail.com');
+
+INSERT INTO restaurant (address, phone_number, e_mail)
+VALUES ('Tsentar bul. Vitosha 15', '+35925252', 'restaurant_18114037@gmail.com');
+
+-- Assign a manager to two restaurants
+INSERT INTO manager_assignment (assignment_role, manager_id_manager, restaurant_id_restaurant)
+VALUES	( 'Manager', 
+		(	SELECT manager.id_manager 
+			FROM manager JOIN account 
+			ON manager.account_id_account = account.id_account
+			WHERE account.name = 'Vladimir'),
+		(	SELECT restaurant.id_restaurant 
+			FROM restaurant 
+			WHERE restaurant.address = 'Borovo ul. Ruen'));
+
+INSERT INTO manager_assignment (assignment_role, manager_id_manager, restaurant_id_restaurant)
+VALUES	( 'Manager', 
+		(	SELECT manager.id_manager 
+			FROM manager JOIN account 
+			ON manager.account_id_account = account.id_account
+			WHERE account.name = 'Vladimir'),
+		(	SELECT restaurant.id_restaurant 
+			FROM restaurant 
+			WHERE restaurant.address = 'Borovo ul. Ruen'));
+
+-- Create tables in restaurants
+-- Insert into Konarskiego 13
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (2, 1);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (4, 1);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (6, 1);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (4, 2);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (5, 2);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (7, 2);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (4, 3);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (6, 3);
+
+INSERT INTO table (capacity, restaurant_id_restaurant)
+VALUES (8, 3);

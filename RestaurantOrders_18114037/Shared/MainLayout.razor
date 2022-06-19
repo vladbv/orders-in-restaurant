@@ -1,0 +1,22 @@
+﻿@using RestaurantOrders_18114037.Data
+
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inherits LayoutComponentBase
+
+<header>
+  <NavMenu />
+</header>
+
+<div class="container">
+    <main role="main" class="pb-3">
+        @Body
+    </main>
+
+</div>
+
+<BlazoredModal/>
+@code
+{
+    
+}

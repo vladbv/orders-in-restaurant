@@ -1,0 +1,111 @@
+﻿@layout LoginLayout
+@page "/login"
+
+@using Models
+@using RestaurantOrders_18114037.Data
+
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@inject Repository.Services.AccountService accountService
+@inject Repository.Services.ClientService clientService
+
+<style>
+    button{
+        margin-top:2px;
+    }
+    div{
+        margin:2px;
+    }
+    h3{
+        margin-bottom:1%;
+    }
+    hr{
+        width:400px;
+    }
+    .box-shadow{
+        height:350px;
+    }
+</style>
+<center>
+    <div class="box-shadow p-3">
+    <h3 class="display-4">Login</h3>
+    <img src="paper-food-box.jpeg" style="width:50%; margin-left:auto; margin-right:auto;"/>
+    <hr />
+    <EditForm Model="@user" OnValidSubmit="@ValidateUser">
+        <div class="email">Email or login:<br /> <InputText id="email" @bind-Value="user.Email"/></div>
+        <div>Password: <br />   <InputText type="password" id="password" @bind-Value="user.Password"/></div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </EditForm>
+    <br />
+    <a class="custom-class text-center col-6 col-md-1 themed-grid-col" href="/register">Registration</a>
+    </div>
+    <br /><br /><br />
+</center>
+
+@if(isException)
+{
+    <center> 
+        <hr>
+        <h3 style="color:rgb(255,51,51)">Incorrect data!</h3> 
+    </center>
+    <!-- <p>@error</p> --> 
+}
+
+@code 
+{
+    private User user;
+    private ClientFront Client;
+    private string error;
+    private bool isException = false;
+
+    protected override Task OnInitializedAsync()
+    {
+        user = new User();
+        Client = new ClientFront();
+        return base.OnInitializedAsync();
+    }
+
+    private async Task<bool> ValidateUser()
+    {
+        try
+        {
+            var hashedPassword = new passwordController().hashPassword(user.Password);
+            var dbUser = await accountService.GetAccountByLoginAndPassword(user.Email, hashedPassword);
+            var clientData = await clientService.GetClientByAccountId(dbUser.IdAccount);
+            Client.Name = dbUser.Name;
+            Client.Password = dbUser.Password;
+            Client.Surname = dbUser.Surname;
+            Client.Login = dbUser.Login;
+            Client.Role = dbUser.Role;
+            Client.EMail = dbUser.EMail;
+            Client.PhoneNumber = dbUser.PhoneNumber;
+            Client.Address = clientData.Address;
+
+            // Client Front nie ma atrybutu points!
+            isException = false;
+
+            ((CustomAuthenticationStateProvider)AuthenticationStateProvider).MarkUserAsAuthenticated(Client);
+            NavigationManager.NavigateTo("/");
+
+            await sessionStorage.SetItemAsStringAsync("email", Client.EMail);
+            await sessionStorage.SetItemAsStringAsync("name", Client.Name);
+            await sessionStorage.SetItemAsStringAsync("surname", Client.Surname);
+            await sessionStorage.SetItemAsStringAsync("login", Client.Login);
+            await sessionStorage.SetItemAsStringAsync("password", user.Password);
+            await sessionStorage.SetItemAsStringAsync("phone", Client.PhoneNumber);
+            await sessionStorage.SetItemAsStringAsync("address", Client.Address);
+            await sessionStorage.SetItemAsStringAsync("role", Client.Role);
+            await sessionStorage.SetItemAsStringAsync("account_id", dbUser.IdAccount.ToString());
+            await sessionStorage.SetItemAsStringAsync("points", clientData.Points.ToString());
+
+            return await Task.FromResult(true);
+        }
+        catch (Exception e)
+        {
+            error = e.ToString();
+            isException = true;
+            return await Task.FromResult(false);
+        }
+    }
+}

@@ -1,0 +1,315 @@
+﻿@page "/client/statistics"
+<style>
+        .table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 1000px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:rgb(0, 123, 255);
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+</style>
+<center>
+<h2 class="my-4">Your historical orders</h2>
+</center>
+
+@using DataBaseAccess.Models
+@using RestaurantOrders_18114037.Models
+@using System;
+
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@inject Repository.Services.ClientService clientService
+@inject Repository.Services.OrderManagmentService orderManagmentService
+@inject Repository.Services.FoodService foodService
+
+@if(historicalOrdersWithSummary is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <center>
+        @if(historicalOrdersWithSummary.Count > 0)
+        {
+            <h3>Totally, you have spent @calculateOverallPrice() @currencyType with us</h3>
+            <hr>
+            <h4>Choose date</h4>
+            <EditForm Model="@forValidation" OnSubmit="@refresh">
+                    <InputSelect id="date" @bind-Value="forValidation.Date">
+                        @foreach (var date in dates)
+                        {
+                            <option value="@date">@date.ToString()</option>
+                        }
+                    </InputSelect>
+                <button type="submit" class="btn btn-primary">Show</button>
+            </EditForm>
+            <hr>
+            <table class="table-fill">
+                <thead>
+                    <tr>
+                        <th class="text-left">Date of order</th>
+                        <th class="text-left">Delivery address</th>
+                        <th class="text-left">Status</th>
+                        <th class="text-left">Sum
+                            <table>
+                                <tr>
+                                    <button type="submit" class="btn btn-primary" @onclick="() => sortOrders(true)"><span class="material-icons">trending_up</span></button>
+                                </tr>
+                                <tr>
+                                    <button type="submit" class="btn btn-primary" @onclick="() => sortOrders(false)"><span class="material-icons">trending_down</span></button>
+                                </tr>
+                            </table>
+                        </th>
+                        <th class="text-left">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach(var historicalOrder in historicalOrdersWithSummary)
+                {
+                    if (@DateOnly.Parse(@historicalOrder.Item1.Date.ToShortDateString()) == @selectedDay)
+                    {
+                        <tr>
+                            <td class="text-left">@historicalOrder.Item1.Date.ToShortDateString()</td>
+                            <td class="text-left">@historicalOrder.Item1.DeliveryAdress</td>
+                            <td class="text-left">@historicalOrder.Item1.Status</td>
+                            <td class="text-left">@calculatePrice(@historicalOrder.Item2)</td>
+                            <th class="text-left">
+                                <table class="table-hover">
+                                    <thead>
+                                        <tr>
+                                            <td class="text-left">Food</td>
+                                            <td class="text-left">Quantity</td>
+                                            <td class="text-left">Price per item</td>
+                                        </tr>
+                                    </thead>
+                                    @foreach (var dish in @historicalOrder.Item2)
+                                    {
+                                        <tr>
+                                            <td class="text-left">@getFoodName(@dish.FoodIdFood)</td>
+                                            <td class="text-left">@dish.Amount</td>
+                                            <td class="text-left">@dish.HistoricalPrice</td>
+                                        </tr>
+                                    }
+                                </table>
+                            </th>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h4>Your order history is empty.</h4>
+            <br />
+            <a class="custom-class text-center col-6 col-md-1 themed-grid-col" href="/">We hope you will make your first order with us!</a>
+        }
+    </center>
+}
+
+@if(wasException)
+{
+    <center> 
+        <hr>
+        <p style="color:rgb(255,51,51)">@error</p>
+    </center>   
+}
+
+@code 
+{
+    private List<(Order, List<Dishes>)> historicalOrders;
+    private List<(Order, List<Dishes>, int)> historicalOrdersWithSummary;
+    private bool wasException = false;
+    private string error;
+    private string currencyType;
+    private Client client;
+    private List<Food> menu;
+    private List<DateOnly> dates;
+    private DateOnly selectedDay;
+    private DateFormFront forValidation = new DateFormFront(); //TODO
+
+    protected override async Task OnParametersSetAsync()
+    {
+        wasException = false;
+        currencyType = "lv";
+        try
+        {
+            var accountId = await sessionStorage.GetItemAsStringAsync("account_id");
+            client = await clientService.GetClientByAccountId(Int32.Parse(accountId));
+            menu = await foodService.GetMenu();
+            historicalOrders = await orderManagmentService.GetAllClientOrdersAndDishes(client.IdClient);
+            historicalOrdersWithSummary = new List<(Order, List<Dishes>, int)>();
+
+            foreach(var order in historicalOrders)
+            {
+                historicalOrdersWithSummary.Add((order.Item1, order.Item2, calculatePrice(order.Item2)));
+            }
+
+            initDays();
+            selectedDay = DateOnly.FromDateTime(DateTime.Now);
+        }
+        catch(Exception e)
+        {
+            error = e.Message;
+            wasException = true;
+        }
+    }
+
+    private int calculatePrice(List<Dishes> dishes)
+    {
+        int sum = 0;
+        foreach(var dish in dishes)
+        {
+            if(dish.Amount != null && dish.HistoricalPrice != null)
+                sum += dish.Amount.GetValueOrDefault() * dish.HistoricalPrice.GetValueOrDefault();
+        }
+        return sum;
+    }
+
+    private int calculateOverallPrice()
+    {
+        int sum = 0;
+        if(historicalOrders != null)
+        {
+            foreach (var historicalOrder in historicalOrders)
+                sum += this.calculatePrice(historicalOrder.Item2);
+        }
+        return sum;
+    }
+
+    private void initDays()
+    {
+        if(historicalOrders != null)
+        {
+            dates = new List<DateOnly>();
+            foreach (var historicalOrder in historicalOrders)
+                if (!dates.Contains(DateOnly.Parse(historicalOrder.Item1.Date.ToShortDateString())))
+                    dates.Add(DateOnly.Parse(historicalOrder.Item1.Date.ToShortDateString()));
+        }
+    }
+
+    private string getFoodName(int foodId)
+    {
+        var foodType = menu.FirstOrDefault(p => p.IdFood == foodId);
+        if (foodType != null)
+            return foodType.Type;
+        else
+            return "ERROR: food not found!";
+    }
+
+    private void refresh()
+    {
+        selectedDay = forValidation.Date;
+        this.StateHasChanged();
+    }
+
+    private void sortOrders(bool orderByDescending = false)
+    {
+        if (orderByDescending)
+            historicalOrdersWithSummary = historicalOrdersWithSummary.OrderByDescending(hows => hows.Item3).ToList();
+        else
+            historicalOrdersWithSummary = historicalOrdersWithSummary.OrderBy(hows => hows.Item3).ToList();
+        this.StateHasChanged();
+    }
+
+    private class DateFormFront
+    {
+        public DateOnly Date { get; set; }
+    }
+}

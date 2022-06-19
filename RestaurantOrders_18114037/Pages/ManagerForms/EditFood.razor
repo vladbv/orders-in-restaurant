@@ -1,0 +1,106 @@
+﻿@page "/Manager/EditFood/{foodId}"
+
+@using Repository.Repositories;
+@using Models;
+@using DataBaseAccess.Models;
+@using System;
+
+@inject Repository.Services.FoodService foodService
+@inject NavigationManager navigationManager
+
+<center>
+<h4>@header</h4>
+        <div class="box-shadow">
+            <EditForm Model="@newFood" OnValidSubmit="@editFood">
+                <DataAnnotationsValidator/>
+                    <div>Price:         <InputNumber id="price" @bind-Value="newFood.price"/>
+                        <div style="color:rgb(255,51,51)"><ValidationMessage For="() => newFood.price"/></div>
+                    </div>
+                    <br />
+                    <div>Cost:          <InputNumber id="cost" @bind-Value="newFood.cost"/>
+                        <div style="color:rgb(255,51,51)"><ValidationMessage For="() => newFood.cost"/></div>
+                    </div>
+                    <br />
+                    <div>Availability:  <InputCheckbox id="availability" @bind-Value="newFood.isAvailable"/>
+                        <div style="color:rgb(255,51,51)"><ValidationMessage For="() => newFood.isAvailable"/></div>    
+                    </div>
+                    <br />
+                    <div>Type:          <InputText id="type" @bind-Value="newFood.type"/>
+                        <div style="color:rgb(255,51,51)"><ValidationMessage For="() => newFood.type"/></div>
+                    </div>
+                    <br />
+                    <div>Size:          <InputNumber id="size" @bind-Value="newFood.size"/>
+                        <div style="color:rgb(255,51,51)"><ValidationMessage For="() => newFood.size"/></div>
+                    </div>
+                    <br />
+                    <div>Points:        <InputNumber id="points" @bind-Value="newFood.points"/>
+                        <div style="color:rgb(255,51,51)"><ValidationMessage For="() => newFood.points"/></div>
+                    </div>
+                <button type="submit" class="btn btn-primary ml-2 mt-2">@buttonText</button>
+            </EditForm>
+        </div>
+    <br />
+        <button type="button" class="btn btn-primary" @onclick="returnFromEditing">Return</button>
+</center>
+
+@code 
+{
+    [Parameter]
+    public string foodId { get; set; }
+    private List<Food> menu;
+    private FoodFront newFood = new FoodFront();
+    private Food dbFood;
+    private string header;
+    private string buttonText;
+
+    private DataBaseAccess.Models.Food food;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Int32.Parse(foodId) > 0)
+        {
+            dbFood = await foodService.GetFoodById(Int32.Parse(foodId));
+            newFood.cost = dbFood.Cost;
+            newFood.price = dbFood.Price;
+            newFood.isAvailable = dbFood.IsAvailable;
+            newFood.points = dbFood.Points.GetValueOrDefault();
+            newFood.size = dbFood.Size.GetValueOrDefault();
+            newFood.type = dbFood.Type;
+            header = "Update food";
+            buttonText = "Update";
+
+        }
+        else
+        {
+            header = "Insert food";
+            buttonText = "Insert";
+        }
+    }
+
+    private void editFood()
+    {
+        Food tmp = new Food()
+        {
+            IdFood = Int32.Parse(foodId),
+            Price = newFood.price,
+            Cost = newFood.cost,
+            IsAvailable = newFood.isAvailable,
+            Type = newFood.type,
+            Size = newFood.size,
+            Points = newFood.points
+        };
+
+        if (Int32.Parse(foodId) > 0)
+            foodService.UpdateFood(tmp);
+        else
+        {
+            foodService.AddNewFood(newFood.price, newFood.cost, newFood.isAvailable, newFood.type, newFood.size, newFood.points);
+            newFood = new FoodFront();
+        }
+    }
+
+    private void returnFromEditing()
+    {
+        navigationManager.NavigateTo("/Manager/ManageMenu");
+    }
+}

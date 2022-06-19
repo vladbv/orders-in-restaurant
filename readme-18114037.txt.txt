@@ -1,0 +1,4 @@
+Download the files I uploaded
+Go to the resources folders, there start by migrating the first data for the database and then the other two.
+Go to appsettings.json, in order to change the connection string for MySQL with your credentials
+Run it

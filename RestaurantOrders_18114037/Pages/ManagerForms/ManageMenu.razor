@@ -1,0 +1,231 @@
+﻿@page "/Manager/ManageMenu"
+
+@using Repository.Repositories
+@using Models
+@using DataBaseAccess.Models
+
+@inject Repository.Services.FoodService foodService
+@inject NavigationManager navigationManager
+
+<style>
+    .table-fill {
+  background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  height: 320px;
+  margin: auto;
+  max-width: 1000px;
+  padding:5px;
+  width: 100%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  animation: float 5s infinite;
+}
+ 
+th {
+  color:#D5DDE5;;
+  background:rgb(0, 123, 255);
+  border-bottom:4px solid #9ea7af;
+  border-right: 1px solid #343a45;
+  font-size:23px;
+  font-weight: 100;
+  padding:24px;
+  text-align:left;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  vertical-align:middle;
+}
+
+th:first-child {
+  border-top-left-radius:3px;
+}
+ 
+th:last-child {
+  border-top-right-radius:3px;
+  border-right:none;
+}
+  
+tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom-: 1px solid #C1C3D1;
+  color:#666B85;
+  font-size:16px;
+  font-weight:normal;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+ 
+tr:hover td {
+  background:#4E5066;
+  color:#FFFFFF;
+  border-top: 1px solid #22262e;
+}
+ 
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+ 
+tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+tr:nth-child(odd):hover td {
+  background:#4E5066;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+td {
+  background:#FFFFFF;
+  padding:20px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+  text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #C1C3D1;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
+
+</style>
+<center>
+    <h3>Manage Menu</h3>
+    <br />
+    <div class="box-shadow">
+        <button type="button" class="btn btn-primary" @onclick="triggerDisplayMenu">Display Menu</button>
+        <button type="button" class="btn btn-primary" @onclick="InsertFood">Add Food</button>
+        <button type="button" class="btn btn-primary" @onclick="refresh">Refresh</button>
+    </div>
+</center>
+
+@if (displayMenu)
+{
+    <center>
+    <h4>Menu</h4>
+    </center>
+    @if (menu is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <div class="border-secondary">
+            <center>
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Food Id</th>
+                            <th class="text-left">Price</th>
+                            <th class="text-left">Cost</th>
+                            <th class="text-left">Availability</th>
+                            <th class="text-left">Type</th>
+                            <th class="text-left">Points</th>
+                            <th class="text-left"></th>
+                        </tr>
+                    </thead>
+                    <tbody class ="table-hover">
+                        @foreach(var item in menu)
+                        {
+                            <tr>
+                                <td class="text-left">@item.IdFood</td>
+                                <td class="text-left">@item.Price</td>
+                                <td class="text-left">@item.Cost</td>
+                                <td class="text-left">@item.IsAvailable</td>
+                                <td class="text-left">@item.Type</td>
+                                <td class="text-left">@item.Points</td>
+                                <td class="text-left">
+                                    <button type="submit" class="btn btn-primary" @onclick="() => editFood(item)">Edit</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    }
+}
+
+@code 
+{
+    private bool displayInsertForm;
+    private bool displayMenu = true;
+    private bool displayDeleteFood;
+    private bool displayUpdateAvailability;
+    private bool foodAvaliability;
+    private int deleteFoodId;
+    private int updateFoodId;
+    private List<Food> menu;
+    private FoodFront newFood = new FoodFront();
+
+    private async void refresh()
+    {
+        menu = await foodService.GetMenu();
+        this.StateHasChanged();
+    }
+
+    protected override async Task OnParametersSetAsync() => menu = await foodService.GetMenu();
+
+    private void InsertFood()
+    {
+        navigationManager.NavigateTo("/Manager/EditFood/-1");
+    }
+
+    protected void deleteFood()
+    {
+        foodService.DeleteFood(deleteFoodId);
+        this.refresh();
+    }
+
+    private void UpdateAvailability()
+    {
+        foodService.ChangeFoodAvailability(updateFoodId, foodAvaliability);
+        this.refresh();
+    }
+
+    private void triggerDisplayMenu()
+    {
+        if (displayMenu == true)
+            displayMenu = false;
+        else
+            displayMenu = true;
+    }
+
+    private void editFood(Food food)
+    {
+        navigationManager.NavigateTo($"/Manager/EditFood/{food.IdFood}");
+    }
+}

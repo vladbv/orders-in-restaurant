@@ -1,0 +1,365 @@
+﻿@page "/Manager/RestaurantStatistics"
+
+@using Repository.Repositories
+@using Models
+@using DataBaseAccess.Models
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+@inject Repository.Services.FoodService foodService
+@inject Repository.Services.RestaurantReportService restaurantReportService
+@inject Repository.Services.ManagerService managerService
+@inject Repository.Services.ManagerAssignmentService managerAssigmentService
+@inject Repository.Services.RestaurantService restaurantService
+
+<style>
+    .table-fill {
+    background: white;
+    border-radius: 3px;
+    border-collapse: collapse;
+    height: 320px;
+    margin: auto;
+    max-width: 1000px;
+    padding: 5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+}
+
+th {
+    color: #D5DDE5;
+    ;
+    background: rgb(0, 123, 255);
+    border-bottom: 4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size: 23px;
+    font-weight: 100;
+    padding: 24px;
+    text-align: left;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+
+    th:first-child {
+        border-top-left-radius: 3px;
+    }
+
+    th:last-child {
+        border-top-right-radius: 3px;
+        border-right: none;
+    }
+
+tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom-: 1px solid #C1C3D1;
+    color: #666B85;
+    font-size: 16px;
+    font-weight: normal;
+    text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+}
+
+    tr:hover td {
+        background: #4E5066;
+        color: #FFFFFF;
+        border-top: 1px solid #22262e;
+    }
+
+    tr:first-child {
+        border-top: none;
+    }
+
+    tr:last-child {
+        border-bottom: none;
+    }
+
+    tr:nth-child(odd) td {
+        background: #EBEBEB;
+    }
+
+    tr:nth-child(odd):hover td {
+        background: #4E5066;
+    }
+
+    tr:last-child td:first-child {
+        border-bottom-left-radius: 3px;
+    }
+
+    tr:last-child td:last-child {
+        border-bottom-right-radius: 3px;
+    }
+
+td {
+    background: #FFFFFF;
+    padding: 20px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid #C1C3D1;
+}
+
+    td:last-child {
+        border-right: 0px;
+    }
+
+th.text-left {
+    text-align: left;
+}
+
+th.text-center {
+    text-align: center;
+}
+
+th.text-right {
+    text-align: right;
+}
+
+td.text-left {
+    text-align: left;
+}
+
+td.text-center {
+    text-align: center;
+}
+
+td.text-right {
+    text-align: right;
+}
+</style>
+
+<center>
+    <h3>Statistics of the restaurant</h3>
+    <br />
+    @if (dishes is null || restaurants is null || menu is null || managerAssignments is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else
+    {
+        <div class="box-shadow">
+        <h4>Select restaurant</h4>
+        <select id="restaurant" @bind="chosenRestaurantId">
+            @if(assignedRestaurants!=null)
+            {
+           
+                @foreach(var assignedRestaurant in assignedRestaurants)
+                    {
+                    <option value="@assignedRestaurant.IdRestaurant">@assignedRestaurant.Address</option>
+                    }
+            }
+            </select>
+            <br />
+            <br />
+            <h4>Choose a range</h4>
+           <form>
+             <input type="date" id="datemin" @bind="lowerDate">
+             <label> - </label>
+             <input type="date" id="datemax" @bind="upperDate">
+             <br />
+           </form>
+        </div>
+        <div class="border-secondary">
+            <center>
+                <table class="table-fill">
+                    <thead>
+                        <tr>
+                            <th class="text-left">Food Id</th>
+                            <th class="text-left">Type</th>
+                            <th class="text-left">Amount</th>
+                            <th class="text-left">Income</th>
+                        </tr>
+                    </thead>
+                    <tbody class ="table-hover">
+                        @foreach(var item in menu)
+                        {
+                            <tr>
+                               
+                                <td class="text-left">@item.IdFood</td>
+                                <td class="text-left">@item.Type</td>
+                                <td class="text-left">@sumsOfFood(@item.IdFood).Item1</td>
+                                <td class="text-left">@sumsOfFood(@item.IdFood).Item2 lv</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </center>
+        </div>
+        <hr />
+       
+        @if(chosenRestaurantId>0 && assignedRestaurants!=null)
+        {
+             <h6>Restaurant income from @assignedRestaurants.Find(item=> item.IdRestaurant ==chosenRestaurantId).Address: @sumsOfAll().Item2 lv</h6>
+             <h6> @sumsOfAll().Item1 foods.</h6>
+        }
+    }
+</center>
+
+@if(wasException)
+{
+    <center> 
+        <hr>
+        <p style="color:rgb(255,51,51)">@error</p>
+    </center>   
+}
+
+@code {
+    private DateOnly lowerDate; 
+    private DateOnly upperDate;
+    private List<Food> menu;
+    private Manager manager;
+    private List<ManagerAssignment> managerAssignments;
+    private bool wasException = false;
+    private string error;
+    private Restaurant chosenRestaurant;
+    private int chosenRestaurantId;
+    private List<Restaurant> assignedRestaurants;
+    private List<Restaurant> restaurants;
+    private List<Tuple<Dishes, DateOnly, int>> dishes;
+    protected override async Task OnParametersSetAsync()
+    {
+
+        wasException = false;
+
+        try
+        {
+            assignedRestaurants= new List<Restaurant>();
+            var accountId = await sessionStorage.GetItemAsStringAsync("account_id");
+            manager = await managerService.getManagerFromAccountID(Int32.Parse(accountId));
+            menu = await foodService.GetMenu();
+            managerAssignments = await managerAssigmentService.GetManagerAssigment();
+            restaurants = await restaurantService.GetRestaurants();
+            dishes = await restaurantReportService.GetDishes();
+
+            upperDate = DateOnly.FromDateTime(DateTime.Now);
+            lowerDate = upperDate.AddMonths(-1);
+            initRestaurants();
+        }
+        catch(Exception e)
+        {
+            error = e.Message;
+            wasException = true;
+        }
+    }
+    private void initRestaurants()
+    {
+
+        if(restaurants!=null && managerAssignments!=null)
+        {
+            assignedRestaurants = new List<Restaurant>();
+            foreach (var restaurant in restaurants)
+            {
+                foreach (var managerAssignment in managerAssignments)
+                {
+                    if(restaurant.IdRestaurant==managerAssignment.RestaurantIdRestaurant && managerAssignment.ManagerIdManager==manager.IdManager)
+                    {
+                        assignedRestaurants.Add(restaurant);
+                    }
+                }
+            }
+            chosenRestaurantId = assignedRestaurants[0].IdRestaurant;
+        }
+    }
+    private Tuple<int, int> sumsOfFood(int foodId)
+    {
+
+        int amountOfFood = 0;
+        int foodIncome = 0;
+        if (dishes != null)
+        {
+
+
+            if (lowerDate <= upperDate)
+            {
+
+                foreach (var dish in dishes)
+                {
+                    if (dish.Item2 >= lowerDate && dish.Item2 <= upperDate)
+                    {
+                        if (foodId == dish.Item1.FoodIdFood)
+                        {
+                            if (dish.Item1.Amount != null && dish.Item3 == chosenRestaurantId)
+                            {
+                                amountOfFood += dish.Item1.Amount.GetValueOrDefault();
+                                if (dish.Item1.HistoricalCost != null && dish.Item1.HistoricalPrice != null)
+                                {
+                                    foodIncome += dish.Item1.Amount.GetValueOrDefault() * (dish.Item1.HistoricalPrice.GetValueOrDefault() - dish.Item1.HistoricalCost.GetValueOrDefault());
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        Tuple<int, int> sum = new Tuple<int, int>(amountOfFood,foodIncome);
+        return sum;
+    }
+
+  
+
+    private Tuple<int, int> sumsOfAll()
+    {
+
+        int amountOfFood = 0;
+        int foodIncome = 0;
+        if (dishes != null)
+        {
+            if (lowerDate <= upperDate)
+            {
+                foreach (var dish in dishes)
+                {
+                    if (dish.Item2 >= lowerDate && dish.Item2 <= upperDate)
+                    {
+
+                        if (dish.Item1.Amount != null && dish.Item3 == chosenRestaurantId)
+                        {
+                            amountOfFood += dish.Item1.Amount.GetValueOrDefault();
+                            if (dish.Item1.HistoricalCost != null && dish.Item1.HistoricalPrice != null)
+                            {
+                                foodIncome += dish.Item1.Amount.GetValueOrDefault() * (dish.Item1.HistoricalPrice.GetValueOrDefault() - dish.Item1.HistoricalCost.GetValueOrDefault());
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        Tuple<int, int> sum = new Tuple<int, int>(amountOfFood,foodIncome);
+        return sum;
+    }
+
+    private Tuple<int, int> sumsOfAllOverall()
+    {
+
+        int amountOfFood = 0;
+        int foodIncome = 0;
+        if (dishes != null)
+        {
+            if (lowerDate <= upperDate)
+            {
+                foreach (var dish in dishes)
+                {
+                    foreach (var assignedRestaurant in assignedRestaurants)
+                    {
+                        if (dish.Item2 >= lowerDate && dish.Item2 <= upperDate && dish.Item3 == assignedRestaurant.IdRestaurant)
+                        {
+
+                            if (dish.Item1.Amount != null)
+                            {
+                                amountOfFood += dish.Item1.Amount.GetValueOrDefault();
+                                if (dish.Item1.HistoricalCost != null && dish.Item1.HistoricalPrice != null)
+                                {
+                                    foodIncome += dish.Item1.Amount.GetValueOrDefault() * (dish.Item1.HistoricalPrice.GetValueOrDefault() - dish.Item1.HistoricalCost.GetValueOrDefault());
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        Tuple<int, int> sum = new Tuple<int, int>(amountOfFood,foodIncome);
+        return sum;
+    }
+
+}

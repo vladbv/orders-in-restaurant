@@ -1,0 +1,177 @@
+﻿@page "/"
+
+@using Repository.Services
+@using Models
+@using DataBaseAccess.Models
+
+@inject NavigationManager NavigationManager
+@inject Repository.Services.FoodService Storage
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject Blazored.SessionStorage.ISessionStorageService sessionStorage
+
+<center>
+    <h1>Welcome to our restaurant!</h1>
+</center>
+<hr class="my-4">
+
+@if (sortedMenu is null)
+{
+    <p><em>Loading...</em></p> }
+else
+{
+    <div class="box-shadow">
+    <center>
+        <div class="text-center">
+            <h3>Menu</h3>
+            <p>You can choose whatever you want to eat and order it!</p>
+              <AuthorizeView Roles="Client">
+                    <Authorized>
+                        <div class="custom-class text-center text-white col-6 col-md-2 themed-grid-col-menu offset-md-1">You are now logged in and you can make your orders!</div>
+                    </Authorized>
+                </AuthorizeView>
+            <img src="for-menu-food.jpg" style="width:50%; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; "/>
+        </div>
+
+        <div class="container ">
+            <div class="row mb-3 justify-content-center" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background:rgba(229,56,36,0.8)">
+                <div class="custom-class text-center text-white col-md-5 themed-grid-col-menu">The name of the food</div>
+                <div class="custom-class text-center text-white col-8 col-md-2 themed-grid-col-menu offset-md-1">Price for food [Leva]</div>
+                <div class="custom-class text-center text-white col-6 col-md-2 themed-grid-col-menu offset-md-1">Points</div>
+                <AuthorizeView Roles="Client">
+                    <Authorized>
+                        <div class="custom-class text-center text-white col-6 col-md-2 themed-grid-col-menu offset-md-1">Order selection</div>
+                    </Authorized>
+                </AuthorizeView>
+
+             </div>
+            
+            @foreach (var food in sortedMenu)
+            {
+                if (food.IsAvailable)
+                {
+                    int local =sortedMenu.IndexOf(food);
+                    <div class="row mb-3 justify-content-center">
+                    <div class="custom-class text-center col-md-5 themed-grid-col">@food.Type</div>
+                    <div class="custom-class text-center col-8 col-md-2 themed-grid-col offset-md-1" style="background:rgba(229,56,36,0.8); color:white !important;">@food.Price lv</div>
+
+                    @if (food.Points == null || food.Points == 0)
+                    {
+                        <div class="custom-class text-center col-6 col-md-2 themed-grid-col offset-md-1">none currently</div> }
+                    else
+                    {
+                        <div class="custom-class text-center col-6 col-md-2 themed-grid-col offset-md-1">@food.Points</div>}
+                            <AuthorizeView Roles="Client">
+                                <Authorized>
+                                    <input type="number" id="foodAmount@(food.IdFood)" min="0" step="1" class="custom-class text-center col-md-1 offset-md-1 " @bind="@order[local]">
+                                </Authorized>
+                            </AuthorizeView>
+                        </div>
+                }
+            }
+        </div>
+        <AuthorizeView Roles="Client">
+            <Authorized>
+                <button @onclick="@realization" class="btn btn-primary mb-3">Complete the order</button>
+            </Authorized>
+        </AuthorizeView>
+    </center>
+</div>
+}
+
+@if(diplayText)
+{
+    <center> 
+        <hr>
+        <h4 style="color:rgb(255,51,51)">You have not selected food.</h4> 
+    </center>
+}
+
+<hr class="my-4" />
+<center>
+    <AuthorizeView Roles="Client">
+        <NotAuthorized>
+            <div class="custom-class text-center col-md-6 themed-alert">
+                <span class="material-icons">phone</span>
+                <h6>(The online order is possible only after creating an account or logging in one)
+</h6>
+            </div>
+        </NotAuthorized>
+    </AuthorizeView>
+</center>
+
+@code
+{
+    private List<Food> menu;
+    private List<Food> sortedMenu;
+    private List<Order> o;
+    [Parameter]
+    public List<int> order { get; set; }=new List<int>(); //
+    private List<bool> isChecked;
+    private int test;
+    private bool diplayText = false;
+
+    protected override Task OnInitializedAsync()
+    {
+        isChecked = new List<bool>();   //
+        sortedMenu = new List<Food>();
+        return base.OnInitializedAsync();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+        menu = await Storage.GetMenu();
+        sortedMenu = menu.OrderBy(o => o.Type).ToList();
+
+        for (int i = 0; i < sortedMenu.Count; i++)
+            order.Add(0);
+    }
+
+    private async void addFoodToSessionStorage()
+    {
+        string whichFoodIdWasSelected = "";
+        for(int i = 0; i < order.Count; i++)
+        {
+            //string tmp = "order_how_many_selected_" + sortedMenu[i].IdFood.ToString();
+            //await sessionStorage.SetItemAsStringAsync(tmp, order[i].ToString());
+            if(order[i] > 0)
+            {
+                whichFoodIdWasSelected += "*";
+                whichFoodIdWasSelected += sortedMenu[i].IdFood.ToString();
+                whichFoodIdWasSelected += "_" + order[i].ToString();
+                whichFoodIdWasSelected += "*";
+            }
+        }
+        await sessionStorage.SetItemAsStringAsync("order_info", whichFoodIdWasSelected);
+    }
+
+    private async Task<bool> realization()
+    {
+        if (isThereAnyFoodSelected())
+        {
+            try
+            {
+                addFoodToSessionStorage();
+                NavigationManager.NavigateTo("/client/order/summary");
+                return await Task.FromResult(true);
+            }
+            catch (Exception e)
+            {
+                return await Task.FromResult(false);
+            }
+        }
+        diplayText = true;
+        this.StateHasChanged();
+        return await Task.FromResult(false);
+    }
+
+    private bool isThereAnyFoodSelected()
+    {
+        foreach(var item in order)
+        {
+            if (item > 0)
+                return true;
+        }
+        return false;
+    }
+}

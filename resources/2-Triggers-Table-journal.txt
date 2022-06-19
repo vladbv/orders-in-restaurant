@@ -1,0 +1,129 @@
+create trigger order_Trg
+on reservation
+after insert, update, delete
+as
+begin
+declare @oper_type varchar(max);
+declare @operation_description nvarchar(max);
+
+IF EXISTS(Select * from inserted)
+IF EXISTS(select * from deleted)
+SET @oper_type = 'update'
+ELSE 
+SET @oper_type = 'insert'
+ELSE
+IF EXISTS(SELECT * FROM deleted)
+SET @oper_type = 'delete'
+ELSE
+--no rows affected
+SET @oper_type = 'unknown'
+
+SET @operation_description = CASE @oper_type
+WHEN 'insert' THEN N'Inserted'
+WHEN 'update' THEN N'Edited'
+WHEN 'delete' THEN N'Deleted'
+END
+
+insert into journal(table_change, fn_18114037, operation)
+values (N'New Reservation', GETDATE(), @operation_description)
+
+end
+
+
+
+create trigger table_Trg
+on table
+after insert, update, delete
+as
+begin
+declare @oper_type varchar(max);
+declare @operation_description nvarchar(max);
+
+IF EXISTS(Select * from inserted)
+IF EXISTS(select * from deleted)
+SET @oper_type = 'update'
+ELSE 
+SET @oper_type = 'insert'
+ELSE
+IF EXISTS(SELECT * FROM deleted)
+SET @oper_type = 'delete'
+ELSE
+--no rows affected
+SET @oper_type = 'unknown'
+
+SET @operation_description = CASE @oper_type
+WHEN 'insert' THEN N'Inserted'
+WHEN 'update' THEN N'Edited'
+WHEN 'delete' THEN N'Deleted'
+END
+
+insert into journal(table_change, fn_18114037, operation)
+values (N'New table', GETDATE(), @operation_description)
+
+end
+
+
+
+create trigger order_Trg
+on order
+after insert, update, delete
+as
+begin
+declare @oper_type varchar(max);
+declare @operation_description nvarchar(max);
+
+IF EXISTS(Select * from inserted)
+IF EXISTS(select * from deleted)
+SET @oper_type = 'update'
+ELSE 
+SET @oper_type = 'insert'
+ELSE
+IF EXISTS(SELECT * FROM deleted)
+SET @oper_type = 'delete'
+ELSE
+--no rows affected
+SET @oper_type = 'unknown'
+
+SET @operation_description = CASE @oper_type
+WHEN 'insert' THEN N'Inserted'
+WHEN 'update' THEN N'Edited'
+WHEN 'delete' THEN N'Deleted'
+END
+
+insert into journal(table_change, fn_18114037, operation)
+values (N'New Order', GETDATE(), @operation_description)
+
+end
+
+
+
+create trigger client_Trg
+on account
+after insert, update, delete
+as
+begin
+declare @oper_type varchar(max);
+declare @operation_description nvarchar(max);
+
+IF EXISTS(Select * from inserted)
+IF EXISTS(select * from deleted)
+SET @oper_type = 'update'
+ELSE 
+SET @oper_type = 'insert'
+ELSE
+IF EXISTS(SELECT * FROM deleted)
+SET @oper_type = 'delete'
+ELSE
+--no rows affected
+SET @oper_type = 'unknown'
+
+SET @operation_description = CASE @oper_type
+WHEN 'insert' THEN N'Inserted'
+WHEN 'update' THEN N'Edited'
+WHEN 'delete' THEN N'Deleted'
+END
+
+insert into journal(table_change, fn_18114037, operation)
+values (N'Client', GETDATE(), @operation_description)
+
+end
