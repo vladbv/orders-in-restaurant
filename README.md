@@ -7,5 +7,6 @@ Download the files I uploaded
 <br>Go to appsettings.json, in order to change the connection string for MySQL with your credentials
 <br>Run it
 
-![layout](https://github.com/vladbv/orders-in-restaurant/ui-frontend-layout.png?raw=true);
-![database schema](https://github.com/vladbv/orders-in-restaurant/database-schema.png?raw=true);
+![layout](https://github.com/vladbv/orders-in-restaurant/blob/master/ui-frontend-layout.png?raw=true);
+<br><br>
+![database schema](https://github.com/vladbv/orders-in-restaurant/blob/master/database-schema.png?raw=true);
