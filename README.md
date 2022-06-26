@@ -9,4 +9,4 @@ Download the files I uploaded
 
 ![layout](https://github.com/vladbv/orders-in-restaurant/blob/master/ui-frontend-layout.png?raw=true);
 <br><br>
-![database schema](https://github.com/vladbv/orders-in-restaurant/blob/master/database-schema.png?raw=true);
+![database schema](https://github.com/vladbv/orders-in-restaurant/blob/master/database-schema-fixed.png?raw=true);
