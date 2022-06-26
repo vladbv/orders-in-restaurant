@@ -21,7 +21,7 @@ INSERT INTO account (e_mail, login, password, name, surname, account_creation_da
 VALUES ('vladimir543@abv.bg','Vladimir','Password1@','Vladimir','Blaskov', GETDATE(), '+359884244373', 'Manager');
 
 INSERT INTO client (points, address, account_id_account)
-VALUES (0,'Amarantowa 1', (	SELECT account.id_account 
+VALUES (0,'Nishava 1', (	SELECT account.id_account 
 				FROM account 
 				WHERE account.name = 'Vladimir'));
 
@@ -88,30 +88,30 @@ VALUES	( 'Manager',
 			WHERE restaurant.address = 'Borovo ul. Ruen'));
 
 -- Create tables in restaurants
--- Insert into Konarskiego 13
-INSERT INTO table (capacity, restaurant_id_restaurant)
+
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (2, 1);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (4, 1);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (6, 1);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (4, 2);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (5, 2);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (7, 2);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (4, 3);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (6, 3);
 
-INSERT INTO table (capacity, restaurant_id_restaurant)
+INSERT INTO [table] (capacity, restaurant_id_restaurant)
 VALUES (8, 3);

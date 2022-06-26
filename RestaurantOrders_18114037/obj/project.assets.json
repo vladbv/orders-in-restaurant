@@ -2161,11 +2161,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\RestaurantOrders_18114037\\RestaurantOrders_18114037.csproj",
+      "projectUniqueName": "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\RestaurantOrders_18114037\\RestaurantOrders_18114037.csproj",
       "projectName": "RestaurantOrders_18114037",
-      "projectPath": "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\RestaurantOrders_18114037\\RestaurantOrders_18114037.csproj",
+      "projectPath": "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\RestaurantOrders_18114037\\RestaurantOrders_18114037.csproj",
       "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\RestaurantOrders_18114037\\obj\\",
+      "outputPath": "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\RestaurantOrders_18114037\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2182,11 +2182,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\DataBaseAccess\\DataBaseAccess.csproj": {
-              "projectPath": "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\DataBaseAccess\\DataBaseAccess.csproj"
+            "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\DataBaseAccess\\DataBaseAccess.csproj": {
+              "projectPath": "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\DataBaseAccess\\DataBaseAccess.csproj"
             },
-            "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\Repository\\Repository.csproj": {
-              "projectPath": "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\Repository\\Repository.csproj"
+            "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\Repository\\Repository.csproj": {
+              "projectPath": "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\Repository\\Repository.csproj"
             }
           }
         }

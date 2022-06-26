@@ -1,0 +1,105 @@
+
+CREATE TRIGGER trg_account_UpdateModifiedDate
+ON account
+AFTER UPDATE
+AS
+UPDATE account
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_account IN (SELECT DISTINCT id_account FROM inserted);
+GO
+
+
+CREATE TRIGGER trg_client_UpdateModifiedDate
+ON client
+AFTER UPDATE
+AS
+UPDATE client
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_client IN (SELECT DISTINCT id_client FROM inserted);
+GO
+
+
+
+CREATE TRIGGER trg_dishes_UpdateModifiedDate
+ON dishes
+AFTER UPDATE
+AS
+UPDATE dishes
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE order_id_order IN (SELECT DISTINCT order_id_order FROM inserted);
+GO
+
+
+CREATE TRIGGER trg_manager_UpdateModifiedDate
+ON manager
+AFTER UPDATE
+AS
+UPDATE manager
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_manager IN (SELECT DISTINCT id_manager FROM inserted);
+GO
+
+
+
+CREATE TRIGGER trg_managerAssignment_UpdateModifiedDate
+ON manager_assignment
+AFTER UPDATE
+AS
+UPDATE manager_assignment
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE manager_id_manager IN (SELECT DISTINCT manager_id_manager FROM inserted);
+GO
+
+
+
+CREATE TRIGGER trg_order_UpdateModifiedDate
+ON order
+AFTER UPDATE
+AS
+UPDATE order
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_order IN (SELECT DISTINCT id_order FROM inserted);
+GO
+
+
+
+CREATE TRIGGER trg_food_UpdateModifiedDate
+ON food
+AFTER UPDATE
+AS
+UPDATE food
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_food IN (SELECT DISTINCT id_food FROM inserted);
+GO
+
+
+CREATE TRIGGER trg_reservation_UpdateModifiedDate
+ON reservation
+AFTER UPDATE
+AS
+UPDATE reservation
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_reservation IN (SELECT DISTINCT id_reservation FROM inserted);
+GO
+
+
+
+CREATE TRIGGER trg_restaurant_UpdateModifiedDate
+ON restaurant
+AFTER UPDATE
+AS
+UPDATE restaurant
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_restaurant IN (SELECT DISTINCT id_restaurant FROM inserted);
+GO
+
+
+
+CREATE TRIGGER trg_table_UpdateModifiedDate
+ON table
+AFTER UPDATE
+AS
+UPDATE table
+SET ModifiedDate_18114037 = CURRENT_TIMESTAMP
+WHERE id_table IN (SELECT DISTINCT id_table FROM inserted);
+GO

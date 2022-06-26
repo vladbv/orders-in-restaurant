@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "crj8YSzOXWxDcF8wSBNCqvxwwkv09qSwjyOTkwfIpuWBVwGgC+Rv0q4RnAfVBYMHv176KUWx8JT+SC5RjvfDpw==",
+  "dgSpecHash": "CL25AB8TJaIAHL8kWE+HXLCh2uoRZ12RCmdx34FJHOf9cbZRIaKxwrJ0Ue8HNrQUPg4Cwxrx+oNRi0Kc0idbTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vladi\\source\\repos\\DEPLOYING-BEFORE-SENDING\\RestaurantOrders_18114037\\RestaurantOrders_18114037.csproj",
+  "projectFilePath": "C:\\Users\\vladi\\source\\repos\\18114037-OrdersInOut-Restaurant-Final\\RestaurantOrders_18114037\\RestaurantOrders_18114037.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vladi\\.nuget\\packages\\blazored.sessionstorage\\2.2.0\\blazored.sessionstorage.2.2.0.nupkg.sha512",
     "C:\\Users\\vladi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

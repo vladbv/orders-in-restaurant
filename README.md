@@ -6,3 +6,6 @@ Download the files I uploaded
 <br>Go to the resources folders, there start by migrating the first data for the database and then the other two.
 <br>Go to appsettings.json, in order to change the connection string for MySQL with your credentials
 <br>Run it
+
+![layout](https://github.com/vladbv/orders-in-restaurant/ui-frontend-layout.png?raw=true);
+![database schema](https://github.com/vladbv/orders-in-restaurant/database-schema.png?raw=true);
